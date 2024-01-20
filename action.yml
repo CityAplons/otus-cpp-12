@@ -3,6 +3,9 @@ description: 'Build a project with the recent TensorFlow C API'
 author: N. Mikhailovskiy
 
 inputs:
+  build:
+    description: 'Build on entrypoint script'
+    default: 'true'
   revision:
     description: 'Build Revision'
     required: true
