@@ -1,0 +1,17 @@
+name: 'Docker TensorFlow Builder'
+description: 'Build a project with the recent TensorFlow C API'
+author: N. Mikhailovskiy
+
+inputs:
+  revision:
+    description: 'Build Revision'
+    required: true
+    default: '1'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: "package"
+  color: "orange"

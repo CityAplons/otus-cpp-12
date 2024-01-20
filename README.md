@@ -1,11 +1,6 @@
-# cmake-multiplatform-template
-Tiny CMake template repository used for various C/CPP projects
+# Tensorflow CPP inference for fMNIST
 
-> Based on the [course example](https://github.com/CityAplons/webinar-cicd/tree/main) and [some more advanced project](https://github.com/vdamewood/silikego)
-
-### Motivation
-
-The ability to create copy-pasted projects for the Advanced-CPP course and personal pet-repos.
+Last task, 12th.
 
 ### Building
 
