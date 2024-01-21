@@ -29,7 +29,7 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_RELEASE_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)  
 set(Boost_USE_STATIC_RUNTIME OFF) 
-find_package(Boost COMPONENTS filesystem program_options thread system) 
+find_package(Boost COMPONENTS filesystem program_options) 
 
 # Transparent versioning
 include_directories(cmake/version)

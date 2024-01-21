@@ -79,11 +79,11 @@ TFClassifier::predict_vector(const features_t &input) const {
     }
 
     // Preprocess input features
-    features_t preproc_features;
+    probes_t preproc_features;
     preproc_features.reserve(input.size());
 
     // Divide each bytes by 255
-    auto transformer = [](float val) {
+    auto transformer = [](uint8_t val) {
         return static_cast<float>(val) / 255.0;
     };
     std::transform(input.begin(), input.end(),
@@ -95,9 +95,7 @@ TFClassifier::predict_vector(const features_t &input) const {
     TF_Output input_opout = {input_op_, 0};
     inputs.push_back(input_opout);
 
-    const int num_bytes_in = width_ * height_ * sizeof(float);
-    const int num_bytes_out = num_classes() * sizeof(float);
-
+    const size_t num_bytes_in = width_ * height_ * sizeof(float);
     int64_t in_dims[] = {1, static_cast<int64_t>(width_),
                          static_cast<int64_t>(height_), 1};
     tf_tensor input_tensor{
@@ -113,6 +111,7 @@ TFClassifier::predict_vector(const features_t &input) const {
     TF_Output output_opout = {output_op_, 0};
     outputs.push_back(output_opout);
 
+    const size_t num_bytes_out = num_classes() * sizeof(float);
     int64_t out_dims[] = {1, static_cast<int64_t>(num_classes())};
     tf_tensor output_value{
         TF_AllocateTensor(TF_FLOAT, out_dims, 2, num_bytes_out),
