@@ -63,8 +63,11 @@ main(int argc, char const *argv[]) {
         if (predicted_id == id) {
             ++valid_predictions;
         }
-        // std::cout << "Actual: " << id << "\nPredicted: " << predicted_id
-        //           << std::endl;
+        // else {
+        //     std::cout << "\nActual: " << id << "\nPredicted: " <<
+        //     predicted_id
+        //               << std::endl;
+        // }
     }
 
     std::cout << std::endl;
