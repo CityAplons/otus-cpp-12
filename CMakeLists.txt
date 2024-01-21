@@ -41,10 +41,12 @@ target_include_directories(version
 )
 
 # Describe build targets
-add_executable(fashion_mnist src/hello.cpp)
+add_executable(fashion_mnist src/main.cpp src/tf_classifier.cpp)
 target_link_libraries(fashion_mnist PRIVATE
     version
     ${TensorFlow_LIBRARIES}
+    Boost::program_options
+    Boost::filesystem
 )
 
 set_compile_options(fashion_mnist)

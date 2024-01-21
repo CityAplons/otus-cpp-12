@@ -14,7 +14,7 @@ RUN apt update && apt install -y \
     python3-dev \
     virtualenv
 
-ENV TF_FILENAME libtensorflow-gpu-linux-x86_64-2.15.0.tar.gz
+ENV TF_FILENAME libtensorflow-cpu-linux-x86_64-2.15.0.tar.gz
 RUN wget -q --no-check-certificate https://storage.googleapis.com/tensorflow/libtensorflow/${TF_FILENAME} &&\
     tar -C /usr/local -xzf ${TF_FILENAME} &&\
     ldconfig /usr/local/lib
